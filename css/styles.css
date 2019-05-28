@@ -1,0 +1,352 @@
+/* ===================================== 
+   Public API Request
+======================================== */
+
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+
+.ptext{
+  position:absolute;
+  top:50%;
+  width:100%;
+  text-align:center;
+  color:#000;
+  font-size:27px;
+  letter-spacing:8px;
+  text-transform:uppercase;
+}
+
+.ptext .border{
+  background-color:#111;
+  color:#fff;
+  padding:20px;
+}
+
+.ptext .border.trans{
+  background-color:transparent;
+}
+
+.pimg1{
+  background-image:url('../source/group.jpg');
+  height:100%;
+  position:relative;
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+background-attachment:fixed;
+}
+.depth{
+  box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 
+  0 9px 46px 8px rgba(0, 0, 0, 0.12), 
+  0 11px 15px -7px rgba(0, 0, 0, 0.2);
+}
+
+#show-more{
+  cursor: pointer;
+  background-color: rgb(31, 62, 199);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 100px;
+  margin-top: 100px
+}
+
+.swiper-button-prev.swiper-button-white{
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  background-color: rgb(15, 221, 170);
+  left: 20%;
+}
+
+.swiper-button-next.swiper-button-white{
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  background-color: rgb(15, 221, 170);
+  right: 20%
+}
+
+.swiper-container {
+  width: 300px;
+  top: 20%
+
+}
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 50%;
+  width: 100%;
+  max-width: 100%;
+}
+
+body {
+  height:100%;
+  font-family: "Nunito", sans-serif;
+  text-align: center;
+  background: rgba(235, 235, 235, 0.9);
+  background-image: url('/Public-API-Requests/source/negotiation-table.jpg');
+  position:relative;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+}
+
+header {
+  top: 0;
+  width: 100%;
+  padding: 5px 5px 5px;
+  background: rgb(235, 235, 235);
+  position:fixed;
+}
+
+.header-inner-container {
+  padding: 0 5px 5px;  
+}
+
+header h1 {
+  font-size: 1.25em;
+  color: rgba(50, 50, 50, 0.9);
+  margin-top: 35px;
+}
+
+.search-input {
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(200, 200, 200, 0.9);
+  border-radius: 0.25rem 0 0 0.25rem;
+  max-width: 20rem;
+  transition: 0.4s ease-out;
+  outline: none;
+}
+
+.search-input:active,
+.search-input:hover,
+.search-input:focus {
+  border: 1px solid rgba(50, 50, 50, 0.9);
+}
+
+.search-submit {
+  cursor: pointer;
+  height: 33px;
+  background: rgba(245, 245, 245, 0.9);
+  border-radius: 0 0.25rem 0.25rem 0;
+  border: 1px solid rgba(200, 200, 200, 0.9);
+  transition: 0.4s ease-out;
+  outline: none;
+}
+
+.search-submit:active,
+.search-submit:hover,
+.search-submit:focus {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(50, 50, 50, 0.9);
+}
+
+/* ===================================== 
+   Gallery
+======================================== */
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  cursor: pointer;
+  width: 100%;
+  max-width: 360px;
+  margin: 10px 10px 20px;
+  padding: 10px;
+  background: rgba(245, 245, 245, 0.9);
+  border-radius: 0.25em;
+  border: 1px solid rgba(50, 50, 50, 0.3);
+  transition: 0.4s ease-out;
+  overflow: hidden;
+}
+
+.card-img {
+  width: 95px;
+  margin: 10px 15px auto 10px;
+  border-radius: 50%;
+}
+
+.card-info-container {
+  text-align: left;
+}
+
+.card-name {
+  margin: 20px auto 0;
+}
+
+.card-text {
+  font-size: 0.9em;
+  color: rgba(50, 50, 50, 0.7);
+  margin: 7px auto;
+  transition: 0.4s ease-out;
+}
+
+.cap {
+  text-transform: capitalize;
+}
+
+/* ===================================== 
+   Modal
+======================================== */
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+
+.modal {
+  position: relative;
+  width: 95%;
+  max-width: 420px;
+  min-height: 415px;
+  margin: 10px auto auto;
+  padding-bottom: 15px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 0.25em;
+  border: 1px solid rgba(100, 100, 100, 0.3);
+  transition: 0.4s ease-out;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.8);
+  outline: none;
+  border-radius: 0.25em;
+  border: 1px solid rgba(50, 50, 50, 0.3);
+}
+
+.modal-img {
+  width: 150px;
+  margin-top: 35px;
+  border-radius: 50%;
+}
+
+.modal-name {
+  margin-bottom: 5px;
+}
+
+.modal-text {
+  color: rgba(50, 50, 50, 0.7);
+  margin: 10px;
+}
+
+.modal hr {
+  width: 75%;
+  margin: 25px auto 30px;
+  border-color: rgba(200, 200, 200, 0.2);
+}
+
+.modal-btn-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  width: 95%;
+  max-width: 420px;
+  padding: 10px 15px 15px;
+  margin: 10px auto auto;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 0.25em;
+  border: 1px solid rgba(100, 100, 100, 0.3);
+}
+
+.modal-btn-container .btn {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0.75em 1.5em;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 0.35em;
+  transition: 0.4s ease-out;
+  outline: none;
+}
+
+/* ===================================== 
+   Media Queries
+======================================== */
+
+/* ===================================== 
+   Tablet
+======================================== */
+
+@media (min-width: 768px) {
+  .header-inner-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding-top: 0;
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  .header-text-container {
+    text-align: left;
+  }
+
+  .search-container {
+    margin-top: 25px;
+  }
+
+  .modal {
+    margin-top: 100px;
+  }
+}
+
+/* ===================================== 
+   Desktop
+   Hover styles on desktop 
+======================================== */
+
+@media (min-width: 1024px) {
+  .card:hover {
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(50, 50, 50, 0.9);
+  }
+
+  .card:hover .card-text {
+    color: rgba(25, 25, 25, 1);
+  }
+
+  .btn:hover {
+    background: rgba(255, 255, 255, 1);
+    color: rgba(25, 25, 25, 1);
+  }
+}
