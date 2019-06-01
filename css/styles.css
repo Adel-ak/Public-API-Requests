@@ -4,9 +4,6 @@
 
 @import url("https://fonts.googleapis.com/css?family=Nunito");
 
-.swiper-container {
-  height: 450.2px;
-}
 /*
 parallax form
 https://www.youtube.com/watch?v=JttTcnidSdQ&t=755s
@@ -60,33 +57,6 @@ https://www.youtube.com/watch?v=JttTcnidSdQ&t=755s
   margin-top: 100px;
 }
 
-.swiper-button-prev.swiper-button-white {
-  width: 70px;
-  height: 70px;
-  border-radius: 50px;
-  background-color: rgb(15, 221, 170);
-  left: 10%;
-}
-
-.swiper-button-next.swiper-button-white {
-  width: 70px;
-  height: 70px;
-  border-radius: 50px;
-  background-color: rgb(15, 221, 170);
-  right: 10%;
-}
-
-.swiper-container {
-  width: 300px;
-  top: 20%;
-}
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-  width: 300px;
-  height: 300px;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -102,7 +72,7 @@ body {
   font-family: "Nunito", sans-serif;
   text-align: center;
   background: rgba(235, 235, 235, 0.9);
-  background-image: url("/Public-API-Requests/source/negotiation-table.jpg");
+  background-image: url("../source/negotiation-table.jpg");
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
@@ -218,8 +188,30 @@ header h1 {
 /* ===================================== 
    Modal
 ======================================== */
-
 .modal-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal {
+  position: relative;
+  width: 95%;
+  max-width: 420px;
+  min-height: 415px;
+  margin: 350px auto auto;
+  padding-bottom: 15px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 0.25em;
+  border: 1px solid rgba(100, 100, 100, 0.3);
+  transition: .4s ease-out;
+}
+
+
+/* .modal-container {
   position: fixed;
   top: 0;
   right: 0;
@@ -240,15 +232,14 @@ header h1 {
   border-radius: 0.25em;
   border: 1px solid rgba(100, 100, 100, 0.3);
   transition: 0.4s ease-out;
-}
+} */
 
 .modal-close-btn {
-  z-index: 4;
   width: 40px;
   height: 30px;
   position: absolute;
-  top: 70px;
-  right: 0;
+  top: 6px;
+  right: 6px;
   cursor: pointer;
   color: rgba(255, 255, 255, 0.9);
   background: rgb(255, 0, 0);
@@ -289,18 +280,17 @@ header h1 {
   margin: 10px auto auto;
   background: rgba(255, 255, 255, 1);
   border-radius: 0.25em;
-  border: 1px solid rgba(100, 100, 100, 0.3);
 }
 
 .modal-btn-container .btn {
   display: inline-block;
   cursor: pointer;
-  font-size: 0.85em;
+  font-sizes: 0.85em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.9);
   padding: 0.75em 1.5em;
-  background: rgba(0, 0, 0, 0.8);
-  border-radius: 0.35em;
+  background: rgba(25, 199, 147, 0.8);
+  border-radius: 3em;
   transition: 0.4s ease-out;
   outline: none;
 }
@@ -313,11 +303,6 @@ header h1 {
    Tablet
 ======================================== */
 @media (max-width: 700px) {
-  .modal-close-btn {
-    top: 3.5%;
-    right: 3%;
-  }
-  
   .ptext{
     font-size: 12.5px;
   }
@@ -343,7 +328,7 @@ header h1 {
   }
 
   .modal {
-    margin-top: 100px;
+    margin-top: 350px;
   }
 }
 
@@ -363,7 +348,7 @@ header h1 {
   }
 
   .btn:hover {
-    background: rgba(255, 255, 255, 1);
+    background: rgb(26, 204, 160);
     color: rgba(25, 25, 25, 1);
   }
 }

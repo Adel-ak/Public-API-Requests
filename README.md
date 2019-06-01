@@ -18,4 +18,4 @@ WELL!! look no further. You've come to the right place,**GAFFER.COM** is a ficti
 
 # Added features
 - Show more button
-- slide show with animation
+- slide show with animation (Removed)
