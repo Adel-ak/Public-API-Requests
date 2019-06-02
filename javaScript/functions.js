@@ -5,29 +5,30 @@ elements to be used for parallax effect and slogan for main page
 parallax form
 https://www.youtube.com/watch?v=JttTcnidSdQ&t=755s
 */
-$("header").before(`
+const parallax = `
 <div class="pimg1">
   <div class="ptext">
     <p><span class="border">“Hire character.  Train skill.”</span></p>
   </div>
-</div>`);
+</div>`;
+document.querySelector('header').insertAdjacentHTML('beforebegin',parallax);
 
 //Search markup to be used to search for specific employee
-$(".search-container").append(`
+const searchInput = `
 <form action="#" method="get">
   <input type="search" id="search-input" class="search-input" placeholder="Search...">
   <input type="submit" value="&#x1F50D;" id="serach-submit" class="search-submit">
-</form>`);
+</form>`;
+document.querySelector(".search-container").insertAdjacentHTML('beforeend',searchInput);
 
 //Modal markup which will have the slideshow markup and next/prev buttons
-$("#gallery").after(`<div class="modal-container"></div>`);
+document.querySelector("#gallery").insertAdjacentHTML('afterend',`<div class="modal-container"></div>`)
 
 //hide modal at start of page
-$(".modal-container").hide();
+document.querySelector(".modal-container").style.display = 'none';
 
 //added button after the modal div
-$(".modal-container").after(`
-<button id="show-more" style="display:none">SHOW MORE</button>`);
+document.querySelector(".modal-container").insertAdjacentHTML('afterend',`<button id="show-more" style="display:none">SHOW MORE</button>`);
 
 /**
  * fetch to get the random users
@@ -35,7 +36,6 @@ $(".modal-container").after(`
  * @param {string} method pass in 'html' or 'append' as a sting to add or replace the content in page (default is 'html', string will be passed to print method)
  * callback printToGallery to print employee cards to page one fetch is done
  */
-
 const get = (num, method = "html") => {
   const url = `https://randomuser.me/api/?inc=picture,name,email,location,cell,phone,dob&nat=US&results=${num}`;
   fetch(url)
@@ -101,11 +101,11 @@ const showCard = () => {
 /**
  * push the details of shown eemployees from the whole
  * employeeList array object to employeeListFiltered
- *
  */
 const pushfiltered = () => {
+  var p = document.querySelectorAll('.shown')
   employeeListFiltered = [];
-  $(".shown").each((index, ele) => {
+  p.forEach(ele => {
     const pushList = employeeList[$(ele).index()];
     employeeListFiltered.push(pushList);
   });
@@ -165,7 +165,7 @@ const print = (markup, from) => {
   if (from == "html") {
     galleryField.innerHTML = markup;
   } else if (from === "append") {
-    $(galleryField).append(markup);
+    galleryField.insertAdjacentHTML('beforeend',markup);
   }
 };
 
