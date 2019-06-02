@@ -65,6 +65,3 @@ showMore.addEventListener("click", e => {
     get(12);
   }
 });
-
-//invoke get to start fetch on page load
-get(12);

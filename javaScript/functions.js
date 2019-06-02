@@ -11,7 +11,7 @@ const parallax = `
     <p><span class="border">“Hire character.  Train skill.”</span></p>
   </div>
 </div>`;
-document.querySelector('header').insertAdjacentHTML('beforebegin',parallax);
+
 
 //Search markup to be used to search for specific employee
 const searchInput = `
@@ -19,16 +19,17 @@ const searchInput = `
   <input type="search" id="search-input" class="search-input" placeholder="Search...">
   <input type="submit" value="&#x1F50D;" id="serach-submit" class="search-submit">
 </form>`;
-document.querySelector(".search-container").insertAdjacentHTML('beforeend',searchInput);
 
-//Modal markup which will have the slideshow markup and next/prev buttons
-document.querySelector("#gallery").insertAdjacentHTML('afterend',`<div class="modal-container"></div>`)
-
-//hide modal at start of page
-document.querySelector(".modal-container").style.display = 'none';
-
-//added button after the modal div
-document.querySelector(".modal-container").insertAdjacentHTML('afterend',`<button id="show-more" style="display:none">SHOW MORE</button>`);
+/**
+ * 
+ * @param {string} selector to locate DOM element using CSS selectors 
+ * @param {string} position adding element beforebegin/afterbegin/beforeend or afterend of the selected element
+ * @param {string} markup html markup to add to the page
+ */
+const eleToPage = (selector,position,markup ) => {
+  document.querySelector(selector)
+  .insertAdjacentHTML(position,markup);
+}
 
 /**
  * fetch to get the random users
@@ -196,3 +197,16 @@ const lookup = () => {
   pushfiltered();
   showCard();
 };
+
+
+//add parallax markup before header 
+eleToPage('header','beforebegin',parallax)
+//add search input and button at the end of search container
+eleToPage(".search-container",'beforeend',searchInput)
+//add modal-container markup after gallery
+eleToPage("#gallery",'afterend',`<div class="modal-container"></div>`)
+document.querySelector('.modal-container').style.display = 'none';
+//add button after the modal div
+eleToPage(".modal-container",'afterend',`<button id="show-more" style="display:none">SHOW MORE</button>`)
+//invoke get to start fetch on page load
+get(12);
