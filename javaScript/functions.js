@@ -82,7 +82,7 @@ const printToGallery = (list, method) => {
  * loop through class of shown to get the index of the clicked div and show modal card by calling modalCard
  * form https://stackoverflow.com/questions/8801787/get-index-of-clicked-element-using-pure-javascript
  * user Ashwin Krishnamurthy
- * callback modalCard to pass the details of the click employee and show card
+ * callback modalCard to pass the details of the clicked employee and show card
  */
 const showCard = () => {
   const g = document.querySelectorAll(".shown");
@@ -100,16 +100,26 @@ const showCard = () => {
 };
 
 /**
- * push the details of shown eemployees from the whole
+ * push the details of shown employees from the whole
  * employeeList array object to employeeListFiltered
+ * jQuery index() equivalent in Vanilla JS
+ * https://stackoverflow.com/questions/28229564/jquery-index-equivalent-in-vanilla-js/28230003
  */
 const pushfiltered = () => {
-  var p = document.querySelectorAll('.shown')
+  const shownCards = document.querySelectorAll('.shown');
+  const gallery = document.querySelector('#gallery');
   employeeListFiltered = [];
-  p.forEach(ele => {
-    const pushList = employeeList[$(ele).index()];
+/*
+get the index of shownCards to push employeeList array index to employeeListFiltered
+Note:- the employee cards and employeeList are in a matching line 
+for eg if employee card number 3 is named tom then the array employeeList[3] 
+has an object of that employee with his/her details
+*/
+  for(var i = 0; i < shownCards.length; i++){
+    const index = Array.from(gallery.children).indexOf(shownCards[i]);
+    const pushList = employeeList[index];
     employeeListFiltered.push(pushList);
-  });
+  }
 };
 
 /**
