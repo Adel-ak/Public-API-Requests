@@ -104,7 +104,7 @@ const showCard = () => {
  * employeeList array object to employeeListFiltered
  */
 const pushfiltered = () => {
-  var p = document.querySelectorAll('.shown')
+  const p = document.querySelectorAll('.shown')
   employeeListFiltered = [];
   p.forEach(ele => {
     const pushList = employeeList[$(ele).index()];
